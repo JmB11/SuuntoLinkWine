@@ -9,9 +9,9 @@
 *You must have at least **Wine 6.6** for installing .NET 4.5*  
 *You must also have a **Wine-Staging** version unless SuuntoLink installer won't run (admin rights error).*
 
-The best way is to use a Wine version provided by WINE-HQ : see [here for various Linux Distros](https://wiki.winehq.org/Download "Wine-HQ for Linux").
+The best way is to use a Wine version provided by WINE-HQ : see [here for various Linux Distros](https://wiki.winehq.org/Download "Wine-HQ for Linux") installation.
 
-
+*For the rest I will explain what I did on my **Ubuntu 20.04***
 
 ***
 
