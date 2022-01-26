@@ -1,6 +1,6 @@
 # SuuntoLinkWine
 
-#### A way to sync and configure your Suunto watch under Linux...
+##### A way to sync and configure your Suunto watch under Linux...
 
 ***
 
@@ -9,7 +9,7 @@
 *You must have at least **Wine 6.6** for installing .NET 4.5*  
 *You must also have a **Wine-Staging** version unless SuuntoLink installer won't run (admin rights error).*
 
-The best way is to use a Wine version provided by WINE-HQ : see [here for various Linux Distros](https://wiki.winehq.org/Download).
+The best way is to use a Wine version provided by WINE-HQ : see [here for various Linux Distros](https://wiki.winehq.org/Download "Wine-HQ for Linux").
 
 
 
@@ -35,7 +35,7 @@ The best way is to use a Wine version provided by WINE-HQ : see [here for variou
 
 ***
 
-![Seems OK!](ok.png)
+![Watch OK](ok.png "It seems so work !")
 
 ***
 
