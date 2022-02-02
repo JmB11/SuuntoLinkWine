@@ -2,18 +2,21 @@
 
 #### Un moyen de synchroniser et de configurer votre montre Suunto sous Linux...
 
-[English version](README.md)
+[English version](README.md).
 
 ***
 
-### 1 - Install Wine :
+### 1 - Installer Wine :
 
-*You must have at least **Wine 6.6** for installing .NET 4.5*  
-*You must also have a **Wine-Staging** version unless SuuntoLink installer won't run (admin rights error).*
+*Vous devez avoir au moins la version **6.6 de Wine** pour povoir installer .NET 4.5*  
+*Vous devez avoir aussi une version **Wine-Staging** sans quoi le programme d'installation de SuuntoLink ne voudra pas s'exécuter (erreur de droits administrateur).*
 
-The best way is to use a Wine version provided by WINE-HQ : see [here for various Linux Distros](https://wiki.winehq.org/Download "Wine-HQ for Linux") installation.
+La meilleure façon est d'installer la dernière version de Wine fournie par WINE-HQ : regardez [ici pour les différentes distributions Linux](https://wiki.winehq.org/Download "Wine-HQ for Linux").
 
-*For the rest I will explain what I did on my **Ubuntu 20.04***
+*Pour la suite, la méthode expliquée fonctionne sur mon **Ubuntu 20.04**. Vous devrez surement adapter certaines étapes selon votre distribution Linux.*
+
+**Astuce :** la commande `wine --version` retourne la version de Wine installée sur votre système.
+
 
 ***
 
