@@ -4,8 +4,8 @@
 
 ## Coming soon...
 
-French Tutorial : [here](LISEZMOI.md).
+![Watch OK](ok.png "It seems so work !")
+
+[Clquez ici pour le tutoriel en français.](LISEZMOI.md)
 
 ***
-
-![Watch OK](ok.png "It seems so work !")
