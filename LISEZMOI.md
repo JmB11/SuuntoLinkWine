@@ -24,7 +24,7 @@ La meilleure façon est d'installer la dernière version de Wine fournie par WIN
 #### Vérification :
 
 ```console
-    wine --version
+wine --version
 ```
 
 La commande retourne la version de Wine installée sur votre système, par exemple : `wine-7.1 (Staging)` sur mon Ubuntu.
@@ -40,9 +40,9 @@ La commande retourne la version de Wine installée sur votre système, par exemp
 Une installation rapide (pas très propre) peut être faite par les commandes suivantes :
 
 ```console
-    wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-    chmod +x winetricks
-    sudo mv winetricks /usr/bin/
+wget  https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks
+sudo mv winetricks /usr/bin/
 ```
 
 <br>
@@ -50,7 +50,7 @@ Une installation rapide (pas très propre) peut être faite par les commandes su
 #### Vérification :
 
 ```console
-    winetricks --version
+winetricks --version
 ```
 
 La commande retourne la version de Winetricks installée sur votre système, par exemple : `20210206-next` sur mon Ubuntu.
@@ -72,8 +72,8 @@ Pour **créer automatiquement un règle** qui affectera les bons droits sur votr
 L'installation se fait par les commandes suivantes :
 
 ```console
-    sudo wget https://raw.githubusercontent.com/JmB11/SuuntoLinkWine/main/libambit.rules -O /etc/udev/rules.d/libambit.rules
-    sudo udevadm control --reload-rules && udevadm trigger
+sudo wget https://raw.githubusercontent.com/JmB11/SuuntoLinkWine/main/libambit.rules -O /etc/udev/rules.d/libambit.rules
+sudo udevadm control --reload-rules && udevadm trigger
 ```
 
 <br>
@@ -83,7 +83,7 @@ L'installation se fait par les commandes suivantes :
 Branchez votre **montre Suunto en USB**, puis :
 
 ```console
-    ls -l /dev/hidraw*
+ls -l /dev/hidraw*
 ```
 
 La commande liste les périphériques HID ; le **dernier périphérique branché** (votre montre) doit apparaitre avec les droits suivants :<br>
@@ -98,13 +98,13 @@ La commande liste les périphériques HID ; le **dernier périphérique branché
 Choisissez une archictecure d'exécution **32 bits** pour Wine grâce à la commande :
 
 ```console
-    export WINEARCH="win32"
+export WINEARCH="win32"
 ```
 
 Installez ensuite .NET 4.5 à l'aide de **Winetricks** par la commande :
 
 ```console
-    winetricks dotnet45
+winetricks dotnet45
 ```
 
 *Si Wine vous demande d'installer "Mono", vous pouvez annuler.<br>
@@ -113,13 +113,13 @@ Si Wine vous demande de redémarrer après l'installation de .NET, choisissez "R
 Choisissez une version **Windows 7** pour l'exécution de Wine par la commande :
 
 ```console
-    winetricks win7
+winetricks win7
 ```
 
 Pour désactiver l'utilisation de SDL avec les périphériques HID, il faut ajouter **Enable SDL** dans la base de registres de Wine grâce à la commande :
 
 ```console
-    wine reg add 'HKLM\System\CurrentControlSet\Services\WineBus' /v 'Enable SDL' /t REG_DWORD /d 0 /f
+wine reg add 'HKLM\System\CurrentControlSet\Services\WineBus' /v 'Enable SDL' /t REG_DWORD /d 0 /f
 ```
 
 <br>
@@ -127,7 +127,7 @@ Pour désactiver l'utilisation de SDL avec les périphériques HID, il faut ajou
 #### Vérification :
 
 ```console
-    wine regedit
+wine regedit
 ```
 
 Dans l'éditeur de base de registres de Wine, recherchez la clé : `HKLM\System\CurrentControlSet\Services\WineBus`.<br>
