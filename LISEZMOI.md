@@ -2,7 +2,9 @@
 
 #### Un moyen de synchroniser et de configurer votre montre Suunto sous Linux...
 
-[English version](README.md).
+[Click here for English version.](README.md)
+
+![Watch OK](ok.png "It seems so work !")
 
 ***
 
@@ -17,7 +19,12 @@ La meilleure façon est d'installer la dernière version de Wine fournie par WIN
 
 *Pour la suite, la méthode expliquée fonctionne sur mon **Ubuntu 20.04**. Vous devrez surement adapter certaines étapes selon votre distribution Linux.*
 
-**Astuce :** la commande `wine --version` retourne la version de Wine installée sur votre système.
+<br>
+
+#### Vérification :
+
+    wine --version
+La commande retourne la version de Wine installée sur votre système, par exemple : `wine-7.1 (Staging)` sur mon Ubuntu.
 
 ***
 
@@ -33,7 +40,12 @@ Une installation rapide (pas très propre) peut être faite par les commandes su
     chmod +x winetricks
     sudo mv winetricks /usr/bin/
 
-**Astuce :** la commande `winetricks --version` retourne la version de Winetricks installée sur votre système.
+<br>
+
+#### Vérification :
+
+    winetricks --version
+La commande retourne la version de Winetricks installée sur votre système, par exemple : `20210206-next` sur mon Ubuntu.
 
 ***
 
@@ -54,20 +66,56 @@ L'installation se fait par les commandes suivantes :
     sudo wget https://raw.githubusercontent.com/JmB11/SuuntoLinkWine/main/libambit.rules -O /etc/udev/rules.d/libambit.rules
     sudo udevadm control --reload-rules && udevadm trigger
 
-**Astuce :** branchez votre montre Suunto en USB et listez les périphériques HID par la commande `ls -l /dev/hidraw*` <br>
-Le dernier périphérique branché (votre montre) doit apparaitre avec les droits suivants : `crw-rw-rw- 1 root root`.
+<br>
+
+#### Vérification :
+
+**Branchez votre montre Suunto en USB**, puis :
+
+    ls -l /dev/hidraw*
+La commande liste les périphériques HID ; le **dernier périphérique branché** (votre montre) doit apparaitre avec les droits suivants :<br>
+`crw-rw-rw- 1 root root`.
 
 ***
 
 <br>
 
-### 4 - Prepare Wine :
+### 4 - Préparer Wine :
+
+Choisissez une archictecure d'exécution **32 bits** pour Wine grâce à la commande :
+
+    export WINEARCH="win32"
+
+Installez ensuite .NET 4.5 à l'aide de **Winetricks** par la commande :
+
+    winetricks dotnet45
+
+*Si Wine vous demande d'installer "Mono", vous pouvez annuler.<br>
+Si Wine vous demande de redémarrer après l'installation de .NET, choisissez "Redémarrer plus tard".*
+
+Choisissez une version **Windows 7** pour l'exécution de Wine par la commande :
+
+    winetricks win7
+
+Pour désactiver l'utilisation de SDL avec les périphériques HID, il faut ajouter **Enable SDL** dans la base de registres de Wine grâce à la commande :
+
+    wine reg add 'HKLM\System\CurrentControlSet\Services\WineBus' /v 'Enable SDL' /t REG_DWORD /d 0 /f
+
+<br>
+
+#### Vérification :
+
+    wine regedit
+Dans l'éditeur de base de registres de Wine, recherchez la clé :<br> `HKLM\System\CurrentControlSet\Services\WineBus`.<br>
+Vérifiez que la valeur DWORD `Enable SDL` est bien présente et vaut `0x00000000 (0)` :
+
+![Enable SDL=0](regedit.png "Enable SDL=0")
 
 ***
 
 <br>
 
-### 5 - Install SuuntoLink  :
+### 5 - Installer SuuntoLink  :
 
 ***
 
@@ -75,9 +123,6 @@ Le dernier périphérique branché (votre montre) doit apparaitre avec les droit
 
 ### 6 (Optional) - Create a launcher :
 
-***
-
-![Watch OK](ok.png "It seems so work !")
 
 ***
 
