@@ -183,7 +183,7 @@ Comment=Suunto Ambit
 
 :warning: Remplacez les 4 instances **USERNAME** dans ce fichier par votre **identifiant Linux** !
 
-*La commande `wineserver -k` permet de "tuer" les éventuels processus Wine qui seraient en cours d'éxécution au cas où SuuntoLink aurait planté auparavant...
+*La commande `wineserver -k` permet de "tuer" les éventuels processus Wine qui seraient en cours d'éxécution au cas où SuuntoLink aurait planté auparavant...*
 
 ***
 
