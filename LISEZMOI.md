@@ -190,3 +190,7 @@ Comment=Suunto Ambit
 <br>
 
 ### Bug connu :
+
+L'économiseur d'écran fige l'actualisation des données avec la montre. Si cela se produit, il suffit de **débrancher et rebrancher** la montre.
+
+Dans le pire des cas, **fermez l'application et redémarrez le lanceur** (avec la commande `wineserver -k` tout devrait bien se passer :sunglasses: ).
