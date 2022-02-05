@@ -2,9 +2,9 @@
 
 #### Un moyen de synchroniser et de configurer votre montre Suunto sous Linux...
 
-[Click here for English version.](README.md)
-
 ![Watch OK](ok.png "It seems so work !")
+
+[Click here for English version.](README.md)
 
 ***
 
