@@ -21,7 +21,7 @@ La meilleure façon est d'installer la dernière version de Wine fournie par WIN
 
 <br>
 
-#### Vérification :
+#### :heavy_check_mark: Vérification :
 
 ```console
 wine --version
@@ -47,7 +47,7 @@ sudo mv winetricks /usr/bin/
 
 <br>
 
-#### Vérification :
+#### :heavy_check_mark: Vérification :
 
 ```console
 winetricks --version
@@ -78,7 +78,7 @@ sudo udevadm control --reload-rules && udevadm trigger
 
 <br>
 
-#### Vérification :
+#### :heavy_check_mark: Vérification :
 
 Branchez votre **montre Suunto en USB**, puis :
 
@@ -100,6 +100,7 @@ Choisissez une archictecure d'exécution **32 bits** pour Wine grâce à la comm
 ```console
 export WINEARCH="win32"
 ```
+<!-- export WINEPREFIX="/home/jmb/.suunto" -->
 
 Installez ensuite .NET 4.5 à l'aide de **Winetricks** par la commande :
 
@@ -108,7 +109,7 @@ winetricks dotnet45
 ```
 
 *Si Wine vous demande d'installer "Mono", vous pouvez annuler.<br>
-Si Wine vous demande de redémarrer après l'installation de .NET, choisissez "Redémarrer plus tard".*
+Si Wine vous demande de redémarrer après l'installation de .NET, choisissez "Redémarrer ultérieurement".*
 
 Choisissez une version **Windows 7** pour l'exécution de Wine par la commande :
 
@@ -124,7 +125,7 @@ wine reg add 'HKLM\System\CurrentControlSet\Services\WineBus' /v 'Enable SDL' /t
 
 <br>
 
-#### Vérification :
+#### :heavy_check_mark: Vérification :
 
 ```console
 wine regedit
@@ -141,20 +142,51 @@ Vérifiez que la valeur DWORD `Enable SDL` est bien présente et vaut `0x0000000
 
 ### 5 - Installer SuuntoLink  :
 
+Vous pouvez télécharger et installer la dernière version de SuuntoLink directement par :
+
 ```console
 wget -P ~/.wine/drive_c/ https://suuntolink.static.movescount.com/Suuntolink_installer.exe
 wine ~/.wine/drive_c/Suuntolink_installer.exe
 ```
 
+Si l'installation se déroule bien et que votre montre est connectée et reconnue, vous devriez arrivez à l'écran de connection :
+
+![Connectez-vous](connection.png "Connectez-vous")
+
+#### :thumbsup: Et voilà !
+
+
 ***
 
 <br>
 
-### 6 (Optional) - Create a launcher :
+### 6 - Créer un lanceur (Optionnel)  :
 
+Pour Ubuntu, vous pouvez créer un lanceur pour SunntoLink :
+
+```console
+gedit ~/.local/share/applications/SuuntoLink.desktop
+```
+
+Entrez ceci dans le code du lanceur :
+
+```desktop
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon=/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/Suuntolink/app-4.0.2/resources/app/icons/icon@4x.png
+Name=Suuntolink
+Exec=sh -c "wineserver -k; cd /home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/Suuntolink; wine Suuntolink.exe >/dev/null 2>&1"
+Comment=Suunto Ambit
+```
+
+:warning: Remplacez les 4 instances **USERNAME** dans ce fichier par votre **identifiant Linux** !
+
+*La commande `wineserver -k` permet de "tuer" les éventuels processus Wine qui seraient en cours d'éxécution au cas où SuuntoLink aurait planté auparavant...
 
 ***
 
 <br>
 
-#### Known bugs :
+### Bug connu :
