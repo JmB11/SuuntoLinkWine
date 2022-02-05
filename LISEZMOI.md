@@ -100,7 +100,7 @@ Choisissez une architecture d'exécution **32 bits** pour Wine grâce à la comm
 ```console
 export WINEARCH="win32"
 ```
-<!-- export WINEPREFIX="/home/jmb/.suunto" -->
+<!-- export WINEPREFIX="/home/USERNAME/.suunto" -->
 
 Installez ensuite .NET 4.5 à l'aide de **Winetricks** par la commande :
 
