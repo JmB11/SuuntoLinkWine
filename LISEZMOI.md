@@ -13,7 +13,7 @@
 ### 1 - Installer Wine :
 
 *Vous devez avoir au moins la version **6.6 de Wine** pour pouvoir installer .NET 4.5*  
-*Vous devez avoir aussi une version **Wine-Staging** sans quoi le programme d'installation de SuuntoLink ne voudra pas s'exécuter (erreur de droits administrateur).*
+*Votre version de wine doit aussi être **Wine-Staging** sans quoi le programme d'installation de SuuntoLink ne voudra pas s'exécuter (erreur de droits administrateur).*
 
 La meilleure façon est d'installer la dernière version de Wine fournie par WINE-HQ : regardez [ici pour les différentes distributions Linux](https://wiki.winehq.org/Download "Wine-HQ for Linux").
 
