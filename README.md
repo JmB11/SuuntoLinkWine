@@ -176,7 +176,7 @@ Enter this in the launcher code :
 Version=1.0
 Type=Application
 Terminal=false
-Icon=/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/Suuntolink/app-4.0.2/resources/app/icons/icon@4x.png
+Icon=/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/Suuntolink/app-4.0.5/resources/app/icons/icon@4x.png
 Name=Suuntolink
 Exec=sh -c "wineserver -k; cd /home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/Suuntolink; wine Suuntolink.exe >/dev/null 2>&1"
 Comment=Suunto Ambit
